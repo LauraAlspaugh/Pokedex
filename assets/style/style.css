@@ -1,0 +1,5 @@
+/* BASIC STYLES HERE */
+#pokemon {
+    max-height: 88.3vh;
+    overflow-y: scroll;
+}
