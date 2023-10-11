@@ -8,7 +8,7 @@ function _drawPokemon() {
     let content = ''
     pokemon.forEach(pokemon => content += `
     <div class="text-center mb-2">
-    <button class="btn btn-info w-100">${pokemon.name}</button>
+    <button onclick="app.PokemonAPIController.getPokemonByIndex('${pokemon.index}')" class="btn btn-info w-100">${pokemon.name}</button>
 </div>
 `)
     setHTML('pokemon', content)
@@ -33,6 +33,14 @@ export class PokemonAPIController {
             Pop.error(error)
             console.error(error)
 
+        }
+    }
+    async getPokemonByIndex(pokemonIndex) {
+        try {
+            await pokemonAPIService.getPokemonByIndex(pokemonIndex)
+        } catch (error) {
+            Pop.error(error)
+            console.error(error);
         }
     }
 
