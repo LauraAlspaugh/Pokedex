@@ -1,17 +1,19 @@
 import { AppState } from "../AppState.js";
+import { Pokemon } from "../models/Pokemon.js";
 import { pokeApi } from "./AxiosService.js"
+
 
 class PokemonAPIService {
     async getPokemonByIndex(pokemonIndex) {
         const res = await pokeApi.get(`api/v2/pokemon/${pokemonIndex}`)
         console.log('Got Pokemon', res.data);
         const newPokemon = new Pokemon(res.data)
-
+        AppState.activePokemon = newPokemon
     }
 
-    async getAPIPokemons() {
+    async getAPIPokemon() {
         const res = await pokeApi.get('api/v2/pokemon')
-        console.log('got pokemons', res.data);
+        console.log('got pokemon', res.data);
         AppState.pokemon = res.data.results
     }
 
