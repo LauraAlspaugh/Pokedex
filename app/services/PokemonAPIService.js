@@ -4,8 +4,8 @@ import { pokeApi } from "./AxiosService.js"
 
 
 class PokemonAPIService {
-    async getPokemonByIndex(pokemonIndex) {
-        const res = await pokeApi.get(`api/v2/pokemon/${pokemonIndex}`)
+    async getPokemonByIndex(pokemonUrl) {
+        const res = await pokeApi.get(`${pokemonUrl}`)
         console.log('Got Pokemon', res.data);
         const newPokemon = new Pokemon(res.data)
         AppState.activePokemon = newPokemon
