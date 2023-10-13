@@ -9,19 +9,21 @@ export class Pokemon {
         this.types = data.types
         this.creatorId = data.creatorId
         this.index = data.index
-        this.baseExperience = data.baseExperience
+        this.baseExperience = data.base_experience
         this.order = data.order
+        this.held_items = data.held_items
     }
 
     get ActiveTemplate() {
         return `
-        <div id="activePokemon" class="col-md-9 p-5">
+        <div id="activePokemon" class="col-md-9 p-5 justify-content-center">
         <div>
         <h1>${this.name}</h1>
-        <h1>${this.baseExperience}</h1>
-        <h1>${this.weight}</h1>
-        <h1>${this.nickName}</h1>
-        <h1>${this.height}</h1>
+        <h3>${this.held_items}</h3>
+        <h3>Weight: ${this.weight}</h3>
+        <h3>${this.nickName}</h3>
+        <h3>Height: ${this.height}</h3>
+        <h3>Experience: ${this.baseExperience}</h3>
 
         </div>
     </div>
