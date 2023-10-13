@@ -10,6 +10,7 @@ export class Pokemon {
         this.creatorId = data.creatorId
         this.index = data.index
         this.baseExperience = data.baseExperience
+        this.order = data.order
     }
 
     get ActiveTemplate() {
@@ -20,6 +21,7 @@ export class Pokemon {
         <h1>${this.baseExperience}</h1>
         <h1>${this.weight}</h1>
         <h1>${this.nickName}</h1>
+        <h1>${this.height}</h1>
 
         </div>
     </div>
