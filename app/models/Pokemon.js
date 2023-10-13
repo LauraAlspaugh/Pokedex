@@ -24,6 +24,7 @@ export class Pokemon {
         <h3>${this.nickName}</h3>
         <h3>Height: ${this.height}</h3>
         <h3>Experience: ${this.baseExperience}</h3>
+        <button class="btn btn-success m-3">Save Pokemon</button>
 
         </div>
     </div>
